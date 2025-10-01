@@ -54,13 +54,16 @@ public class TutorialMod {
             event.accept(ModItems.ALEXANDRITE);
         }
 
-
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.DRIPPYFACE);
         }
 
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.ROCKGRASS);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.DIRTYBLOCK);
         }
     }
 
