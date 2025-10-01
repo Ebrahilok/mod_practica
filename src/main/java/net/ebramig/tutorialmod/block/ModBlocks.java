@@ -5,6 +5,7 @@ package net.kaupenjoe.tutorialmod.block;
 
 import net.ebramig.tutorialmod.TutorialMod;
 import net.ebramig.tutorialmod.item.ModItems;
+import net.minecraft.client.resources.model.Material;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -24,7 +25,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> DRIPPYFACE = registerBlock("drippy_face_block", () -> new Block(BlockBehaviour.Properties.of()
             .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
-
+    public static final RegistryObject<Block> ROCKGRASS = registerBlock("rock_grass", () -> new Block(BlockBehaviour.Properties.of()
+            .strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
