@@ -2,6 +2,7 @@ package net.ebramig.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.ebramig.tutorialmod.item.ModItems;
+import net.kaupenjoe.tutorialmod.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -51,6 +52,11 @@ public class TutorialMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.ALEXANDRITE);
+        }
+
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.DRIPPYFACE);
         }
     }
 
