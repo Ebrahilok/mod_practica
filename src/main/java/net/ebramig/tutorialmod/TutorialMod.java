@@ -34,6 +34,7 @@ public class TutorialMod {
 
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
 
         // Register the item to a creative tab
