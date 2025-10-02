@@ -2,5 +2,7 @@
 "item.tutorialmod.alexandrite": "Alexandrite Gem",
 "block.tutorialmod.drippy_face_block": "Drippy face block",
   "block.tutorialmod.rock_grass": "Rock Grass block",
-  "block.tutorialmod.dirty_block": "Dirty block"
+  "block.tutorialmod.dirty_block": "Dirty block",
+  "creativetab.tutorialmod.blocks_tab": "Blocks tab",
+  "creativetab.tutorialmod.items_mod": "Items tab"
 }

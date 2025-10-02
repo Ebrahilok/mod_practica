@@ -1,6 +1,6 @@
 // ESTE ARCHIVO NO ESTÁ TERMINADO. NO CORRER
 
-package net.kaupenjoe.tutorialmod.block;
+package net.ebramig.tutorialmod.block;
 
 
 import net.ebramig.tutorialmod.TutorialMod;
