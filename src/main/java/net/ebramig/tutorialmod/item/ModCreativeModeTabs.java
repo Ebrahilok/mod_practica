@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.DIRTYBLOCK.get());
                         output.accept(ModBlocks.DRIPPYFACE.get());
+                        output.accept(ModBlocks.PURPLEROCK.get());
 
                     }).build());
 

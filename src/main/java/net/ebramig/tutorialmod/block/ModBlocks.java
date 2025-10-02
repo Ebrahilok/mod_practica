@@ -31,6 +31,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DIRTYBLOCK = registerBlock("dirty_block", () -> new Block(BlockBehaviour.Properties.of()
             .strength(1f).sound(SoundType.ROOTED_DIRT)));
 
+    public static final RegistryObject<Block> PURPLEROCK = registerBlock("purple_rock", () -> new Block(BlockBehaviour.Properties.of()
+            .strength(4f).requiresCorrectToolForDrops().sound(SoundType.LODESTONE)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
