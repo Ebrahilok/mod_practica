@@ -2,6 +2,7 @@ package net.ebramig.tutorialmod.item;
 
 import net.ebramig.tutorialmod.TutorialMod;
 import net.ebramig.tutorialmod.block.ModBlocks;
+import net.ebramig.tutorialmod.item.ModFoods;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -34,11 +35,11 @@ public class ModCreativeModeTabs {
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> FOOD_TAB = CREATIVE_MODE_TABS.register("food_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModFoods.CEVICHE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.CEVICHE.get()))
                     .withTabsBefore(ITEMS_TAB.getId())
                     .title(Component.translatable("creativetab.tutorialmod.foods_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModFoods.CEVICHE.get());
+                        output.accept(ModItems.CEVICHE.get());
 
                     }).build());
 
