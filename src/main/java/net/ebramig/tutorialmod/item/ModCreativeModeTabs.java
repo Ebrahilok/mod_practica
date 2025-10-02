@@ -33,6 +33,15 @@ public class ModCreativeModeTabs {
 
                     }).build());
 
+    public static final RegistryObject<CreativeModeTab> FOOD_TAB = CREATIVE_MODE_TABS.register("food_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModFoods.CEVICHE.get()))
+                    .withTabsBefore(ITEMS_TAB.getId())
+                    .title(Component.translatable("creativetab.tutorialmod.foods_tab"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModFoods.CEVICHE.get());
+
+                    }).build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
 
