@@ -25,11 +25,17 @@ public class ModBlocks {
     public static final RegistryObject<Block> DRIPPYFACE = registerBlock("drippy_face_block", () -> new Block(BlockBehaviour.Properties.of()
             .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
+    public static final RegistryObject<Block> YELLOWASPHALT = registerBlock("yellow_asphalt_block", () -> new Block(BlockBehaviour.Properties.of()
+            .strength(4f).requiresCorrectToolForDrops().sound(SoundType.POINTED_DRIPSTONE)));
+
     public static final RegistryObject<Block> ROCKGRASS = registerBlock("rock_grass", () -> new Block(BlockBehaviour.Properties.of()
             .strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> DIRTYBLOCK = registerBlock("dirty_block", () -> new Block(BlockBehaviour.Properties.of()
             .strength(1f).sound(SoundType.ROOTED_DIRT)));
+
+    public static final RegistryObject<Block> ASPHALTBLOCK = registerBlock("asphalt_block", () -> new Block(BlockBehaviour.Properties.of()
+            .strength(1f).sound(SoundType.DRIPSTONE_BLOCK)));
 
     public static final RegistryObject<Block> PURPLEROCK = registerBlock("purple_rock", () -> new Block(BlockBehaviour.Properties.of()
             .strength(4f).requiresCorrectToolForDrops().sound(SoundType.LODESTONE)));

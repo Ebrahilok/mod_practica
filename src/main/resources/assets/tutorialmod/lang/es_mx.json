@@ -2,5 +2,12 @@
   "item.tutorialmod.alexandrite": "Gema de Alexandrite",
   "block.tutorialmod.drippy_face_block": "Bloque de cara fachera",
   "block.tutorialmod.rock_grass": "Bloque de roca de cesped",
-  "block.tutorialmod.dirty_block": "Bloque sucio"
+  "block.tutorialmod.dirty_block": "Bloque sucio",
+  "block.tutorialmod.purple_rock": "Roca purpura",
+  "block.tutorialmod.asphalt_block": "Bloque de asfalto",
+  "block.tutorialmod.yellow_asphalt_block": "Bloque de asfalto amarillo",
+  "creativetab.tutorialmod.blocks_tab": "Bloques",
+  "creativetab.tutorialmod.items_mod": "Items",
+  "creativetab.tutorialmod.foods_tab": "Comida",
+  "item.tutorialmod.ceviche": "Ceviche"
 }

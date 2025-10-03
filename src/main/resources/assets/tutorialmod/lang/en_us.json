@@ -3,8 +3,10 @@
 "block.tutorialmod.drippy_face_block": "Drippy face block",
   "block.tutorialmod.rock_grass": "Rock Grass block",
   "block.tutorialmod.dirty_block": "Dirty block",
-  "block.tutorialmod.purple_rock": "Purple Rock",
+  "block.tutorialmod.purple_rock": "Purple rock",
   "item.tutorialmod.ceviche": "Ceviche",
+  "block.tutorialmod.asphalt_block": "Asphalt block",
+  "block.tutorialmod.yellow_asphalt_block": "Yellow Asphalt block",
   "creativetab.tutorialmod.blocks_tab": "Blocks tab",
   "creativetab.tutorialmod.items_mod": "Items tab",
   "creativetab.tutorialmod.foods_tab": "Food tab"
