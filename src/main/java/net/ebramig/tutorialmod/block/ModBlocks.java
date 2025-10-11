@@ -1,8 +1,6 @@
 // ESTE ARCHIVO NO ESTÁ TERMINADO. NO CORRER
 
 package net.ebramig.tutorialmod.block;
-
-
 import net.ebramig.tutorialmod.TutorialMod;
 import net.ebramig.tutorialmod.item.ModItems;
 import net.minecraft.client.resources.model.Material;
@@ -21,6 +19,9 @@ public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, TutorialMod.MOD_ID);
+
+    public static final RegistryObject<Block> UADEOBLOCK = registerBlock("uadeo_block", ()->new Block(BlockBehaviour.Properties.of()
+            .strength(4f).requiresCorrectToolForDrops().sound(SoundType.POINTED_DRIPSTONE)));
 
     public static final RegistryObject<Block> DRIPPYFACE = registerBlock("drippy_face_block", () -> new Block(BlockBehaviour.Properties.of()
             .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
@@ -55,6 +56,3 @@ public class ModBlocks {
     }
 
 }
-
-
-

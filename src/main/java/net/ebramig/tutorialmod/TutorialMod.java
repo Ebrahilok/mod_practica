@@ -78,6 +78,10 @@ public class TutorialMod {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.ASPHALTBLOCK);
         }
+
+        if(event.getTabKey()==CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.UADEOBLOCK);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
