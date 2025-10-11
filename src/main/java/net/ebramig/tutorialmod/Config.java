@@ -110,6 +110,7 @@ public class Config
                         true,
                         true
                 );
+                
                 //
                 Warden warden = EntityType.WARDEN.create(serverLevel);
                 BlockPos spawnPos = pos.north(10);
