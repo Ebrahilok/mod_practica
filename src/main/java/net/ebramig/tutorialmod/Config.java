@@ -7,7 +7,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -27,13 +26,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.registries.ForgeRegistries;
-
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-// An example config class. This is not required, but it's a good idea to have one to keep your config organized.
-// Demonstrates how to use Forge's config APIs
 @Mod.EventBusSubscriber(modid = TutorialMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class Config
 {
@@ -86,10 +82,8 @@ public class Config
         if (level.isClientSide()) {
             return;
         }
-        BlockPos pos = event.getPos();
-        BlockState state = level.getBlockState(pos);
-        Player player = event.getEntity();
-        ItemStack stack = event.getItemStack();
+        BlockPos pos = event.getPos(); BlockState state = level.getBlockState(pos);
+        Player player = event.getEntity(); ItemStack stack = event.getItemStack();
         if (state.getBlock() == ModBlocks.UADEOBLOCK.get()) {
             if (stack.getItem() == ModItems.ALEXANDRITE.get()) {
                 //★★★★★Rep Sonido★★★★★
@@ -104,13 +98,7 @@ public class Config
                 }
                 //■Tormenta■■■■■■■■■■■■
                 ServerLevel serverLevel = (ServerLevel) level;
-                serverLevel.setWeatherParameters(
-                        0,
-                        6000,
-                        true,
-                        true
-                );
-
+                serverLevel.setWeatherParameters(0, 6000, true, true);
                 //
                 Warden warden = EntityType.WARDEN.create(serverLevel);
                 BlockPos spawnPos = pos.north(10);
