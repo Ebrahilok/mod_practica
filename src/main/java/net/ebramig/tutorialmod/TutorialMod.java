@@ -1,5 +1,4 @@
 package net.ebramig.tutorialmod;
-
 import com.mojang.logging.LogUtils;
 import net.ebramig.tutorialmod.block.ModBlocks;
 import net.ebramig.tutorialmod.item.ModCreativeModeTabs;
@@ -18,30 +17,27 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-
-// The value here should match an entry in the META-INF/mods.toml file
+//Tutorial
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+//★El valor coincide con META-INF/mods.toml★
 @Mod(TutorialMod.MOD_ID)
 public class TutorialMod {
-    // Define mod id in a common place for everything to reference
+    //★Guardar ID Mod Referencia★
     public static final String MOD_ID = "tutorialmod";
-    // Directly reference a slf4j logger
+    //★Guardar slf4j logger★
     private static final Logger LOGGER = LogUtils.getLogger();
-
     public TutorialMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
-        // Register ourselves for server and other game events we are interested in
+        //★Registro de eventos y eventos del juego★
         MinecraftForge.EVENT_BUS.register(this);
-
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-
-
-        // Register the item to a creative tab
+        //★Registrar Items en modo creativo★
         modEventBus.addListener(this::addCreative);
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
+        //=Registro configuracion de forge=
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
@@ -49,48 +45,41 @@ public class TutorialMod {
 
     }
 
-    // Add the example block item to the building blocks tab
+    //★BLOCK_CREATIVE FE_Data★
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.ALEXANDRITE);
         }
-
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.DRIPPYFACE);
         }
-
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.ROCKGRASS);
         }
-
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.PURPLEROCK);
         }
-
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.YELLOWASPHALT);
         }
-
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.DIRTYBLOCK);
         }
-
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.ASPHALTBLOCK);
         }
-
         if(event.getTabKey()==CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.UADEOBLOCK);
         }
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    //EVT_BUS_SERVER
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
 
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+    //★Guardar registro★
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent

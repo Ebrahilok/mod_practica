@@ -1,9 +1,6 @@
-// ESTE ARCHIVO NO ESTÁ TERMINADO. NO CORRER
-
 package net.ebramig.tutorialmod.block;
 import net.ebramig.tutorialmod.TutorialMod;
 import net.ebramig.tutorialmod.item.ModItems;
-import net.minecraft.client.resources.model.Material;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -14,7 +11,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
-
+//FBlock
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =

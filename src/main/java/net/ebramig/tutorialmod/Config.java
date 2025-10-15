@@ -1,27 +1,7 @@
 package net.ebramig.tutorialmod;
-
-import net.ebramig.tutorialmod.block.ModBlocks;
-import net.ebramig.tutorialmod.item.ModItems;
-import net.minecraft.ChatFormatting;
-import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LightningBolt;
-import net.minecraft.world.entity.monster.warden.Warden;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
@@ -29,7 +9,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
+//Config
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 @Mod.EventBusSubscriber(modid = TutorialMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class Config
 {
@@ -74,43 +55,5 @@ public class Config
         items = ITEM_STRINGS.get().stream()
                 .map(itemName -> ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse(itemName)))
                 .collect(Collectors.toSet());
-    }
-    @SubscribeEvent
-    public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-        Level level = event.getLevel();
-        if (level.isClientSide()) {
-            return;
-        }
-        BlockPos pos = event.getPos(); BlockState state = level.getBlockState(pos);
-        Player player = event.getEntity(); ItemStack stack = event.getItemStack();
-        if (state.getBlock() == ModBlocks.UADEOBLOCK.get()) {
-            if (stack.getItem() == ModItems.ALEXANDRITE.get()) {
-                //★★★★★Rep Sonido★★★★★
-                level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 1.0f, 1.0f);
-                //■Efectos■■■■■■■■■■■■■
-                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1000, 0));
-                LightningBolt lightning = EntityType.LIGHTNING_BOLT.create(level);
-                if (lightning != null) {
-                    //■Calculos■■■■■■■■
-                    lightning.moveTo(Vec3.atBottomCenterOf(pos));
-                    level.addFreshEntity(lightning);
-                }
-                //■Tormenta■■■■■■■■■■■■
-                ServerLevel serverLevel = (ServerLevel) level;
-                serverLevel.setWeatherParameters(0, 6000, true, true);
-                //
-                Warden warden = EntityType.WARDEN.create(serverLevel);
-                BlockPos spawnPos = pos.north(10);
-                if (warden != null) {
-                    warden.moveTo(Vec3.atBottomCenterOf(spawnPos.above()));
-                    warden.setPersistenceRequired();
-                    serverLevel.addFreshEntity(warden);
-                }
-                //
-                player.sendSystemMessage(Component.literal("Has invocado la furia de Mario Erenas"));
-                player.sendSystemMessage(Component.literal("Sera mejor que corras...").withStyle(ChatFormatting.RED));
-                event.setCanceled(true);
-            }
-        }
     }
 }
