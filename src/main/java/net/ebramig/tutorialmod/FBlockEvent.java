@@ -32,7 +32,7 @@ public class FBlockEvent {
             return;
         }
         Player player = Event.getEntity(); ItemStack stack = Event.getItemStack();
-        //BLOCK_UADEO FEvSys_EVT★
+        //★BLOCK_UADEO FEvSys_EVT★
         //========================================
         //Se establecen varios efectos y se torna mas sombrio incluyendo la aparicion de varios enemigos
         //El warden al parecer se debe invocar a la fuerza
